@@ -1,0 +1,74 @@
+@keyframes danger-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.danger-pulse {
+  animation: danger-pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes radar-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+.radar-sweep {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: radar-spin 4s linear infinite;
+}
+
+@keyframes ping {
+  0% {
+    r: 2;
+    opacity: 0.9;
+  }
+  100% {
+    r: 9;
+    opacity: 0;
+  }
+}
+.minimap-ping {
+  animation: ping 1.8s ease-out infinite;
+}
+
+@keyframes text-glitch {
+  0%,
+  100% {
+    text-shadow: none;
+    translate: 0 0;
+  }
+  20% {
+    text-shadow:
+      -2px 0 var(--c-danger),
+      2px 0 var(--c-glitch);
+    translate: 1px 0;
+  }
+  45% {
+    text-shadow:
+      2px 0 var(--c-danger),
+      -2px 0 var(--c-glitch);
+    translate: -1px 0;
+  }
+  70% {
+    text-shadow: none;
+    translate: 0 0;
+  }
+}
+.glitch-on-hover:not(:disabled):hover .glitch-text,
+.glitch-on-hover:not(:disabled):focus-visible .glitch-text {
+  animation: text-glitch 0.35s steps(3) 1;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1s steps(1) infinite;
+}

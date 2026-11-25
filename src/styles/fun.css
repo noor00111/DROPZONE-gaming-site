@@ -1,0 +1,95 @@
+.hit-marker {
+  position: fixed;
+  z-index: 47;
+  width: 22px;
+  height: 22px;
+  translate: -50% -50%;
+  pointer-events: none;
+  background:
+    linear-gradient(45deg, transparent 44%, var(--c-text) 44% 56%, transparent 56%),
+    linear-gradient(-45deg, transparent 44%, var(--c-text) 44% 56%, transparent 56%);
+  mask-image: radial-gradient(circle, transparent 28%, black 30%);
+}
+
+@keyframes feed-in {
+  from {
+    opacity: 0;
+    translate: 30px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.feed-line {
+  animation: feed-in 0.3s ease-out both;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+    scale: 0.9;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+.toast-in {
+  animation: toast-in 0.4s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+.achievement-hex {
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: var(--c-line);
+  color: rgb(232 232 232 / 0.4);
+}
+.achievement-hex.is-unlocked {
+  background: linear-gradient(160deg, #ffe08a, var(--c-amber) 50%, #b97a00);
+  color: var(--c-charcoal);
+}
+
+@keyframes secret-drop {
+  0% {
+    translate: 0 -70vh;
+    rotate: -8deg;
+  }
+  60% {
+    translate: 0 0;
+    rotate: 6deg;
+  }
+  75% {
+    rotate: -3deg;
+  }
+  85%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+    opacity: 1;
+  }
+}
+.secret-drop {
+  animation:
+    secret-drop 1.6s cubic-bezier(0.3, 0.1, 0.3, 1) both,
+    fade-away 0.5s 2.7s ease-in forwards;
+}
+@keyframes secret-burst {
+  from {
+    opacity: 0;
+    scale: 0.3;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.secret-burst {
+  animation: secret-burst 0.4s 1.4s cubic-bezier(0.2, 1.8, 0.4, 1) both;
+}
+@keyframes fade-away {
+  to {
+    opacity: 0;
+  }
+}

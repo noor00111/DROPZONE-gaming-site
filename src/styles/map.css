@@ -1,0 +1,54 @@
+@keyframes zone-ping {
+  from {
+    scale: 1;
+    opacity: 0.8;
+  }
+  to {
+    scale: 2.6;
+    opacity: 0;
+  }
+}
+.zone-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: zone-ping 1.8s ease-out infinite;
+}
+
+.map-hotspot:focus-visible circle:last-of-type {
+  stroke: var(--c-amber);
+  stroke-width: 4px;
+}
+
+@media (max-width: 640px) {
+  .zone-label[data-active='false'] {
+    display: none;
+  }
+}
+
+@keyframes map-crate-drop {
+  from {
+    translate: 0 -160px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes map-crate-chute {
+  0%,
+  80% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.4;
+  }
+}
+.map-crate-drop {
+  animation: map-crate-drop 1.1s cubic-bezier(0.3, 0.1, 0.3, 1) both;
+}
+.map-crate-chute {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: map-crate-chute 1.6s ease-in both;
+}

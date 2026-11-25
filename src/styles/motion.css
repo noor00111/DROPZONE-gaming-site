@@ -1,0 +1,50 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+  .danger-pulse,
+  .radar-sweep,
+  .minimap-ping,
+  .blink,
+  .glitch-on-hover .glitch-text,
+  .scroll-line,
+  .chrome-text,
+  .propeller,
+  .zone-ping,
+  .map-crate-drop,
+  .map-crate-chute,
+  .weapon-in,
+  .operator-in,
+  .operator-breathe,
+  .visor-glint,
+  .feed-line,
+  .toast-in,
+  .mvp-stamp,
+  .secret-drop,
+  .secret-burst,
+  .holo-frame,
+  .chute-bob,
+  .overlay-grain[data-animated='true']::before {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .drop-chute {
+    display: none;
+  }
+  .card-tilt {
+    transform: none !important;
+  }
+  .card-flip {
+    transition-duration: 0.01s;
+  }
+  .fan-slot {
+    transition: none !important;
+  }
+  .loading-screen[data-visible='false'] {
+    scale: 1;
+  }
+}

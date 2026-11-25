@@ -1,0 +1,71 @@
+.pass-row {
+  scrollbar-width: none;
+}
+.pass-row:focus-visible {
+  outline: 2px solid var(--c-amber);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+.pass-row::-webkit-scrollbar {
+  display: none;
+}
+
+.pass-tier {
+  border-color: var(--c-line);
+  background: rgb(232 232 232 / 0.03);
+  color: rgb(232 232 232 / 0.6);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+.pass-tier.is-unlocked {
+  border-color: rgb(255 176 0 / 0.6);
+  background: rgb(255 176 0 / 0.08);
+  color: var(--c-text);
+}
+.pass-tier.is-unlocked .pass-icon {
+  color: var(--c-amber);
+  animation: reward-pop 0.45s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+}
+.pass-tier.is-legendary.is-unlocked {
+  border-color: transparent;
+  background:
+    linear-gradient(#1c1a22, #1c1a22) padding-box,
+    linear-gradient(120deg, #a855f7, #ec4899, #38bdf8, #a3e635) border-box;
+}
+.pass-tier.is-legendary.is-unlocked .pass-icon {
+  color: #c084fc;
+}
+@keyframes reward-pop {
+  from {
+    scale: 0.3;
+    rotate: -20deg;
+  }
+  to {
+    scale: 1;
+    rotate: 0deg;
+  }
+}
+
+.paper-note {
+  position: relative;
+  background: #ece6d6;
+  border-radius: 4px;
+  padding: 2rem 1.5rem 1.5rem;
+  box-shadow: 0 14px 30px rgb(0 0 0 / 0.45);
+  transition: rotate 0.3s ease;
+}
+.paper-note:hover {
+  rotate: 0deg !important;
+}
+.paper-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 90px;
+  height: 26px;
+  translate: -50% 0;
+  rotate: -3deg;
+  background: rgb(255 176 0 / 0.55);
+}
